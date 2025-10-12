@@ -1,0 +1,5 @@
+Issue: Copypaste from Host OS to VM in virtualbox not working
+Solution (steps):
+1. Enable bidirectional data in General->Advanced setting of VM
+2. Install VBoxClient (requirement for next step): sudo apt install virtualbox-guest-x11
+3. Restart the VBox clipboard module: pkill 'VBoxClient --clipboard' -f & sleep 1 && VBoxClient --clipboard
