@@ -3,3 +3,10 @@ Solution (steps):
 1. Enable bidirectional data in General->Advanced setting of VM
 2. Install VBoxClient (requirement for next step): sudo apt install virtualbox-guest-x11
 3. Restart the VBox clipboard module: pkill 'VBoxClient --clipboard' -f & sleep 1 && VBoxClient --clipboard
+
+Issue: mininet-vm (mininet-2.3.0-210211-ubuntu-18.04.5-server-amd64) GUI install
+Solution:
+1. sudo apt-get update
+2. sudo apt-get install xinit x11-xserver-utils mate-desktop-environment-core (minmal mate-desktop)
+3. sudo apt-get install virtualbox-guest-x11 (if running on virtualbox)
+
