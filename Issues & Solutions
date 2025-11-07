@@ -10,3 +10,18 @@ Solution:
 2. sudo apt-get install xinit x11-xserver-utils mate-desktop-environment-core (minmal mate-desktop)
 3. sudo apt-get install virtualbox-guest-x11 (if running on virtualbox)
 
+Issue: How to enable Ctrl+Shift+C and Ctrl+Shift+V:
+
+You’ll need to modify the ~/.Xresources file (or create it if it doesn’t exist) to specify these shortcuts.
+1. Edit .Xresources (or create the file if it doesn't exist):
+  Open or create the ~/.Xresources file:
+   nano ~/.Xresources
+2. Add the following lines to enable Ctrl+Shift+C and Ctrl+Shift+V:
+  XTerm.vt100.translations: #override \
+    Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
+    Ctrl Shift <Key>V: insert-selection(CLIPBOARD)
+3. Apply the changes by reloading the .Xresources file:
+   xrdb -merge ~/.Xresources
+4. Restart xterm (or the Mininet xterm windows) to see the changes.
+
+
